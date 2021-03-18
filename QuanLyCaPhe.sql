@@ -174,7 +174,7 @@ AS
 		VALUES(@idBill, @idFood, @countFood)
 	END
 GO
-ALTER TRIGGER TG_UpdateBillInfor
+CREATE TRIGGER TG_UpdateBillInfor
 ON BillInfor FOR INSERT, UPDATE
 AS
 	DECLARE @idBill INT
@@ -192,7 +192,7 @@ AS
 	UPDATE TableCoffee SET statusTable =N'Trong' WHERE id=@idTable
 	END
 GO
-ALTER TRIGGER TG_UpdateBill
+CREATE TRIGGER TG_UpdateBill
 ON Bill FOR  UPDATE
 AS
 	DECLARE @idBill INT
@@ -264,6 +264,18 @@ DELETE BillInfor
 DELETE Bill
 UPDATE TableCoffee SET statusTable=N'Trống'
 
+GO
+USE qlcaphe
+ALTER TABLE Bill ADD totalPrice FLOAT
+GO
+ALTER PROC SP_GetListBillByDate
+@dateCheckIn DATETIME, @dateCheckOut DATETIME
+AS
+BEGIN
+SELECT t.nameTable AS [Tên bàn], b.dateCheckIn AS [Ngày CheckIn], b.dateCheckOut AS [Ngày CheckOut], b.totalPrice AS [Tổng tiền] 
+FROM Bill as b, TableCoffee as t
+WHERE dateCheckIn>=@dateCheckIn AND dateCheckOut<=@dateCheckOut AND statusBill=1 AND t.id=b.idTable
+END
 
 GO
 

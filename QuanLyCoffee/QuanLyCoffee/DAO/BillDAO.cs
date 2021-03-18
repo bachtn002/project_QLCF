@@ -49,9 +49,9 @@ namespace QuanLyCoffee.DAO
             }       
         }
 
-        public void checkOut(int idBill, int discountCoffee)
+        public void checkOut(int idBill, int discountCoffee, float totalPrice)
         {
-            string query = "UPDATE Bill SET statusBill=1, dateCheckOut=GETDATE() , "+"discountCoffee = "+discountCoffee+" WHERE id = " + idBill;
+            string query = "UPDATE Bill SET statusBill=1, dateCheckOut=GETDATE() , "+"discountCoffee = "+discountCoffee+", totalPrice = "+totalPrice+" WHERE id = " + idBill;
             DataProvider.Instance.executeNonQuery(query);
         }
 
@@ -66,6 +66,11 @@ namespace QuanLyCoffee.DAO
                 listBill.Add(bill);
             }
             return listBill;
+        }
+        public DataTable getListBillByDate(DateTime dateCheckIn, DateTime dateCheckOut)
+        {
+            return DataProvider.Instance.executeQuery("SP_GetListBillByDate @dateChekIn , @dateCheckOut", new object[] { dateCheckIn, dateCheckOut });
+
         }
     }
 }

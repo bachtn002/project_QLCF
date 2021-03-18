@@ -192,7 +192,7 @@ namespace QuanLyCoffee
                     button7.Enabled = false;
                     CultureInfo cultureInfo = new CultureInfo("vi-VN");
                     label17.Text = finalTotalPrice.ToString("c", cultureInfo);
-                    BillDAO.Instance.checkOut(idBill, discountCoffee);
+                    BillDAO.Instance.checkOut(idBill, discountCoffee, (float)finalTotalPrice);
                     //showDanhSachMon1(tableCoffee.Id);
                     loadTableCoffee();
                     getDateCheckOut_ver2();
@@ -330,8 +330,13 @@ namespace QuanLyCoffee
 
         }
 
+        private void thốngKêToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fThongKe f = new fThongKe();
+            f.Show();
+        }
         #endregion
 
-        
+
     }
 }

@@ -85,6 +85,7 @@ namespace QuanLyCoffee
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.comboBoxFood = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -100,6 +101,7 @@ namespace QuanLyCoffee
             this.menuStrip1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.qLTàiKhoảnToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.thốngKêToolStripMenuItem,
             this.trợGiúpToolStripMenuItem,
             this.quayLạiToolStripMenuItem});
@@ -121,8 +123,9 @@ namespace QuanLyCoffee
             // 
             this.thốngKêToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
-            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(97, 25);
-            this.thốngKêToolStripMenuItem.Text = "Thống Kê";
+            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(102, 25);
+            this.thốngKêToolStripMenuItem.Text = "Thống Kê ";
+            this.thốngKêToolStripMenuItem.Click += new System.EventHandler(this.thốngKêToolStripMenuItem_Click);
             // 
             // trợGiúpToolStripMenuItem
             // 
@@ -653,6 +656,13 @@ namespace QuanLyCoffee
             this.label15.TabIndex = 25;
             this.label15.Text = "Tên món";
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(124, 25);
+            this.toolStripMenuItem1.Text = "Quản Lý Kho";
+            // 
             // fTableManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -754,5 +764,6 @@ namespace QuanLyCoffee
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox comboBoxChuyenBan;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
