@@ -38,7 +38,7 @@ namespace QuanLyCoffee
                 Button btn = new Button();
                 btn.Width = 105;
                 btn.Height = 105;
-                btn.Font = new Font("Times New Roman", 15);
+                btn.Font = new Font("Century Gothic", 14);
                 btn.Text = item.NameTable + Environment.NewLine + item.StatusTable;
                 btn.Click += Btn_Click;
                 btn.Tag = item;
