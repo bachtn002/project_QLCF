@@ -164,6 +164,10 @@ namespace QuanLyCoffee
         }*/
 
         #region Event
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
         private void button7_Click(object sender, EventArgs e)
         {
             TableCoffee tableCoffee = listView1.Tag as TableCoffee;
@@ -247,7 +251,7 @@ namespace QuanLyCoffee
         private void quayLạiToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            fLogin f = new fLogin();
+            Login f = new Login();
             f.Show();
         }
 
@@ -335,8 +339,9 @@ namespace QuanLyCoffee
             fThongKe f = new fThongKe();
             f.Show();
         }
+
         #endregion
 
-
+        
     }
 }
