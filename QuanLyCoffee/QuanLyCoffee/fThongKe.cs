@@ -26,5 +26,11 @@ namespace QuanLyCoffee
         {
             loadListBillByDate(dateTimePicker1.Value, dateTimePicker2.Value);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            
+        }
     }
 }
