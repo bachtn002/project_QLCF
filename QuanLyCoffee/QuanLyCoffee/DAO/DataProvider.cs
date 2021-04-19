@@ -11,7 +11,7 @@ namespace QuanLyCoffee.DAO
 
     public class DataProvider
     {
-        string connectionString = "Data Source=DESKTOP-2RNHE1C\\SQLEXPRESS;Initial Catalog=qlcaphe;Integrated Security=True";
+        string connectionString = "Data Source=DESKTOP-F6LH1G1\\SQLEXPRESS;Initial Catalog=quanlycaphe;Integrated Security=True";
         private static DataProvider instance;
 
         public static DataProvider Instance

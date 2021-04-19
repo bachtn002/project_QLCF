@@ -1,5 +1,5 @@
-﻿CREATE DATABASE qlcaphe
-use qlcaphe
+﻿CREATE DATABASE quanlycaphe
+use quanlycaphe
 
 GO
 CREATE TABLE TableCoffee(
@@ -75,6 +75,7 @@ dateCheckOut DATETIME ,
 idTable INT NOT NULL,
 statusBill INT NOT NULL, 
 discountCoffee INT DEFAULT 0,
+totalPrice FLOAT NOT NULL DEFAULT 0
 FOREIGN KEY (idTable) REFERENCES TableCoffee(id)
 )
 GO
@@ -206,7 +207,7 @@ AS
 	UPDATE TableCoffee SET statusTable=N'Trống' WHERE id=@idTable
 	END
 GO
-ALTER PROC SP_SwitchTable
+CREATE PROC SP_SwitchTable
 
 @idTable1 INT, @idTable2 INT
 AS
@@ -268,7 +269,7 @@ GO
 USE qlcaphe
 ALTER TABLE Bill ADD totalPrice FLOAT
 GO
-ALTER PROC SP_GetListBillByDate
+CREATE PROC SP_GetListBillByDate
 @dateCheckIn DATETIME, @dateCheckOut DATETIME
 AS
 BEGIN
