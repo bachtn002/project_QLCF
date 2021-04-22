@@ -1,5 +1,5 @@
 ﻿CREATE DATABASE quanlycaphe
-use quanlycaphe
+USE quanlycaphe
 
 GO
 CREATE TABLE TableCoffee(
@@ -266,7 +266,6 @@ DELETE Bill
 UPDATE TableCoffee SET statusTable=N'Trống'
 
 GO
-USE qlcaphe
 ALTER TABLE Bill ADD totalPrice FLOAT
 GO
 CREATE PROC SP_GetListBillByDate
